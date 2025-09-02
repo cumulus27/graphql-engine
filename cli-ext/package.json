@@ -6,7 +6,7 @@
   "scripts": {
     "transpile": "rm -rf build/* && babel --extensions '.ts,.js' ./src ./tests --out-dir build",
     "prebuild": "npm run transpile",
-    "build": "./build.sh",
+    "build": "NODE_OPTIONS=--max-old-space-size=13312 ./build.sh",
     "pretest": "npm run transpile && babel ./tests --out-dir _tmptests",
     "posttest": "rm -rf _tmptests",
     "test": "node ./_tmptests/index.js",

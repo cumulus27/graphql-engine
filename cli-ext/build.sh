@@ -3,6 +3,8 @@
 set -e
 set -u
 
+export NODE_OPTIONS="--max-old-space-size=13312"
+
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
 rm -rf ./bin/*
